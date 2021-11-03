@@ -1,0 +1,16 @@
+server:
+  port: 8000
+dubbo:
+  application:
+    name: dubbo-service
+  scan:
+    base-packages: com.demo.service.impl # dubbo服务发布者所在的包
+  registry:
+    address: zookeeper://172.26.9.39:2181 # zookeeper注册中心的地址
+  protocol:
+    name: dubbo
+    port: 20880
+    accesslog: true
+  provider:
+    retries: 1
+    delay: -1
